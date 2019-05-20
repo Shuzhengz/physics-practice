@@ -10,5 +10,15 @@ int main() {
   }
   Profile profile(current);
   profile.SetGoal(goal);
+
+  std::string maxVignore;
+  std::cout << "Ignore max velocity? ";
+  std::cin >> maxVignore;
+  if (maxVignore == "yes"){
+    ignore_max_velocity = true;
+  }
+  else if (maxVignore == "no"){
+    ignore_max_velocity = false;
+  }
   std::cout << profile.GetTime() << std::endl;
 }
