@@ -34,3 +34,10 @@ const double Profile::GetTime() {
 
   return 0.0;
 }
+
+const double Profile::GetSetpoint(){
+  double t;
+  std::string time;
+  std::cout << "Velocity at: ";
+  std::cin >> t;
+}

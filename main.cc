@@ -21,4 +21,5 @@ int main() {
     ignore_max_velocity = false;
   }
   std::cout << profile.GetTime() << std::endl;
+  std::cout << "This is part two of the assignment" << std::endl;
 }
