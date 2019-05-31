@@ -5,7 +5,7 @@ int main() {
   Profile::ProfilePoint current;
   Profile::ProfilePoint goal;
   {
-    goal.position = 1.0;
+    goal.position = 2.0;
     goal.velocity = 0.0;
   }
   Profile profile(current);
@@ -22,4 +22,5 @@ int main() {
   }
   std::cout << profile.GetTime() << std::endl;
   std::cout << "This is part two of the assignment" << std::endl;
+  profile.GetSetpoint();
 }

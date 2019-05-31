@@ -15,7 +15,10 @@ public:
   Profile(ProfilePoint current) {
     current_ = current;
   }
-  void SetGoal(ProfilePoint goal) { goal_ = goal; }
+  void SetGoal(ProfilePoint goal) {
+    goal_ = goal;
+  }
+  
   const double GetTime();
   const double GetSetpoint();
 
