@@ -52,11 +52,11 @@ const double Profile::GetSetpoint(){
   position_beg = current_.position;
   position_inp = goal_.position;
 
-  time_acc = std:abs(v_max-v_initial) / acceleration;
-  distance_while_acc = 0.5 * std:abs(v_max + v_initial) * time_acc;
+  time_acc = std::abs(velocity_max - Vzero) / acceleration;
+  distance_while_acc = 0.5 * std::abs(velocity_max + Vzero) * time_acc;
 
   distance_traveled_after_acc = position_inp - distance_while_acc - distance_while_acc;
-  time_const = distance_after_acc / velocity_max;
+  time_const = distance_traveled_after_acc / velocity_max;
 
   time = time_acc + time_const + time_acc;
 
@@ -68,14 +68,14 @@ const double Profile::GetSetpoint(){
   else if (t >= time_acc && t <= (time_acc + time_const)) {
     velocity_current = velocity_max;
   }
-  else if (t > (time_acc + time_const) && t <= time) {
-    velocity_current = veocity_max + (velocity_goal - velocity_max) * (t - time_acc - time_const) / time_acc;
+  else if (t > (time_acc + time_const) && t <= t) {
+    velocity_current = velocity_max + (velocity_goal - velocity_max) * (t - time_acc - time_const) / time_acc;
   }
   else {
     velocity_current = 0;
   }
   std::ostringstream strss;
-  strs << velocity_current;
+  strss << velocity_current;
   std::string str = strss.str();
   std::cout << velocity_current << std::endl;
 } //Profile::GetSetpoint
